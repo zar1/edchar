@@ -1,0 +1,4 @@
+- handle other multi-char input, like arrow keys
+- respect backspace on inputstring (first, just use d, we'll do backspace when we do multichar input)
+  - left and right move cursor, echos char under cursor before moving
+- README

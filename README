@@ -1,0 +1,58 @@
+EDCHAR: The single-character text editor
+
+Edchar is a full-featured text editor in a world where displays are only 1
+character tall and 1 character wide. 
+
+Building:
+make edchar
+
+Usage:
+./edchar [FILENAME]
+runs edchar. Optionally edits the new or existing file FILENAME.
+
+Using edchar is somewhat similar to 
+using vi, in that the user will move from mode to mode with 1-character
+commands. 
+
+Edchar will display a prompt to inform the user what it expects. The prompts
+are:
+    > The user should input 1 character. This is the prompt in normal mode, 
+        insert mode, and replace mode.
+    $ Insert a string and then press enter. This is the prompt in Insert or
+        Replace mode.
+    # Insert a positive integer and then press enter. This is the prompt when
+        edchar needs the user to specify a length.
+    Anything else: edchar is printing a message. Press any key to progress to
+        the next character. When edchar is done with a message, it will 
+        present a prompt. Errors usually start and end with "!". Edchar will
+        acknowledge things with "K".
+
+When in normal mode, the user is expected to input a command. The commands are:
+    Command  Argument    Description   
+    q                    Quits
+    e        $           Opens new or existing file $ for editing.
+    f                    Prints name of currently open file
+    w                    Writes to currently open file
+    W        $           Writes to file specified by $
+    g                    Prints character currently under the cursor to screen
+    G        #           Prints the character under the cursor and the next
+                             # - 1 characters
+    p                    Prints entire file
+    r        >           Replace character under the cursor with >
+    R        $           Replace characters from cursor position until the end
+                             of the string $
+    i        >           Insert a character > at cursor
+    I        $           Insert string $ at cursor
+    a        >           Append > after cursor
+    A        $           Append string $ after cursor
+    d                    Delete character under cursor
+    D        #           Deletes # characters from cursor forward
+    h                    Move cursor 1 character left
+    l                    Move cursor 1 character right
+    c                    Print current cursor position 
+    #                    Move cursor to line specified by #
+    ?                    Print help
+    v                    Prints version info
+
+Contact:
+Maintained by Zachary Rubenstein (zachary.rubenstein@gmail.com)
